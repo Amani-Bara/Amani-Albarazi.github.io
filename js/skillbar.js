@@ -1,20 +1,21 @@
-const skillbar = () => {
-  const skillBars = document.querySelectorAll(".skill");
-  skillBars.forEach((skillBar) => {
-    const fill = skillBar.querySelector(".skill-bar__fill");
-    const percentage = skillBar.querySelector(".skill-percent");
-    const progress = parseInt(fill.getAttribute("data-progress"), 10);
-    fill.style.width = `${progress}%`;
+// === Skill bars: fill when the section is visible ===
+document.addEventListener('DOMContentLoaded', () => {
+  const fills = document.querySelectorAll('.about-skills .skill-bar__fill');
+  if (!fills.length) return;
 
-    let counter = 0;
-    const interval = setInterval(() => {
-      if (counter <= progress) {
-        percentage.textContent = `${counter}%`;
-        counter++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 1500 / progress);
-  });
-};
-export default skillbar;
+  // start collapsed so the CSS transition is visible
+  fills.forEach(el => (el.style.width = '0%'));
+
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const pct = parseInt(el.dataset.progress || '0', 10);
+      el.style.width = pct + '%';
+      obs.unobserve(el); // animate once
+    });
+  }, { threshold: 0.35 });
+
+  fills.forEach(el => io.observe(el));
+});
+
