@@ -345,7 +345,7 @@ h5 {
 .skill-bar__progress {
   background-color: var(--gray-color);
   border-radius: 5px;
-  height: 6px;
+  height: 4px;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -354,8 +354,8 @@ h5 {
 .skill-bar__fill {
   background-color: var(--secondary-accent);
   height: 4px;
-  width: 0; 
-  transition: width 1.5s ease-in-out; 
+  width: 0; /* Initial width is 0 */
+  transition: width 1.5s ease-in-out; /* Smooth transition for the fill */
 }
 
 .about-download-btn {
@@ -586,9 +586,7 @@ h5 {
     radial-gradient(120px 80px at 20% 0%, color-mix(in oklab, var(--secondary-accent) 18%, transparent) 0, transparent 70%),
     radial-gradient(160px 90px at 100% 0%, color-mix(in oklab, var(--primary-accent) 12%, transparent) 0, transparent 70%);
   border-radius: inherit; pointer-events:none; opacity:.7;
-  pointer-events: none; 
 }
-
 
 
 /* Contact */
@@ -877,5 +875,9 @@ h5 {
   filter: invert(0%) sepia(0%) saturate(7500%) hue-rotate(305deg)
           brightness(97%) contrast(103%);
 }
+
+
+/* Mobile nav setup */
+
 
 
