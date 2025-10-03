@@ -586,7 +586,9 @@ h5 {
     radial-gradient(120px 80px at 20% 0%, color-mix(in oklab, var(--secondary-accent) 18%, transparent) 0, transparent 70%),
     radial-gradient(160px 90px at 100% 0%, color-mix(in oklab, var(--primary-accent) 12%, transparent) 0, transparent 70%);
   border-radius: inherit; pointer-events:none; opacity:.7;
+  pointer-events: none; 
 }
+
 
 
 /* Contact */
