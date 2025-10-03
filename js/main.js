@@ -59,37 +59,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Mobile nav toggle (works on phones and small desktop windows)
-(function () {
-  const nav = document.getElementById('nav');
-  const btn = document.getElementById('nav-btn');
-  const img = document.getElementById('nav-btn-img');
-  if (!nav || !btn || !img) return;
-
-  const openIcon  = 'img/icons/open.svg';
-  const closeIcon = 'img/icons/close.svg';
-
-  const setOpen = (isOpen) => {
-    nav.classList.toggle('open', isOpen);
-    img.src = isOpen ? closeIcon : openIcon;
-    btn.setAttribute('aria-expanded', String(isOpen));
-    document.body.classList.toggle('menu-open', isOpen);
-  };
-
-  btn.addEventListener('click', () => {
-    setOpen(!nav.classList.contains('open'));
-  });
-
-  // Close menu after clicking a link
-  document.querySelectorAll('.nav-list .nav-link').forEach(a => {
-    a.addEventListener('click', () => setOpen(false));
-  });
-
-  // Auto-close if window is resized wider than the mobile breakpoint
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900 && nav.classList.contains('open')) {
-      setOpen(false);
-    }
-  });
-})();
 
