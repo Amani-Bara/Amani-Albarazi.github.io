@@ -879,18 +879,3 @@ h5 {
 }
 
 
-.nav-list {
-  position: absolute;
-  top: 100%;
-  right: 0;     /* stick to right */
-  left: auto;   /* don’t stretch */
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px 12px;
-  background: var(--white-color);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
-  width: max-content;   /* shrink to fit */
-}
