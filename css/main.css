@@ -221,6 +221,14 @@ h5 {
 
 
 
+@media screen and (max-width: 768px) {
+  .nav-btn {
+    display: block; /* or inline-block */
+  }
+}
+
+
+
 /* Hero section */
 .hero {
   position: relative;
