@@ -59,4 +59,18 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 });
 
-                  
+
+
+
+
+
+const navBtn = document.getElementById('nav-btn');
+const navList = document.querySelector('.nav-list');
+const navBtnImg = document.getElementById('nav-btn-img');
+
+navBtn.addEventListener('click', () => {
+  navList.classList.toggle('nav-open');
+  const isOpen = navList.classList.contains('nav-open');
+  navBtnImg.src = isOpen ? 'img/icons/close.svg' : 'img/icons/open.svg';
+});
+
