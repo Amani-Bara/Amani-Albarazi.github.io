@@ -62,23 +62,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-window.addEventListener('DOMContentLoaded', () => {
-  const navBtn = document.getElementById('nav-btn');
-  const navList = document.querySelector('.nav-list');
-  const navBtnImg = document.getElementById('nav-btn-img');
-
-  if (!navBtn || !navList || !navBtnImg) {
-    console.error('Mobile nav elements not found');
-    return;
-  }
-
-  navBtn.addEventListener('click', () => {
-    navList.classList.toggle('nav-open');
-    const isOpen = navList.classList.contains('nav-open');
-    // Adjust path if needed
-    navBtnImg.src = isOpen ? 'img/icons/close.svg' : 'img/icons/open.svg';
-  });
-});
-
