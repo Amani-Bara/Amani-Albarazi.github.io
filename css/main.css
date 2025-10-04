@@ -880,29 +880,25 @@ h5 {
 
 
 
-
-
 @media (max-width: 768px) {
   .nav-list {
     position: absolute;
-    top: 90px; /* height of header */
+    top: 90px;
     right: 0;
-    background-color: var(--white-color);
     width: 100%;
+    background-color: var(--white-color);
     flex-direction: column;
-    align-items: center;
     gap: 20px;
     padding: 20px 0;
 
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     z-index: 1000;
   }
 
   .nav-list.nav-open {
-    max-height: 300px; /* adjust depending on your number of items */
+    max-height: 500px; /* enough for all items */
   }
 
   .nav-btn {
@@ -912,15 +908,4 @@ h5 {
     cursor: pointer;
     z-index: 1001;
   }
-
-  .nav-btn img {
-    width: 24px;
-    height: 24px;
-  }
 }
-
-
-/* Mobile nav setup */
-
-
-
