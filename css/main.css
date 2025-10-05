@@ -222,23 +222,13 @@ h5 {
   text-underline-offset: 7px;
 }
 
-/* --- MOBILE STYLES --- */
-@media (max-width: 768px) {
-  /* Make sure nav stays positioned inside header */
-  .nav {
-    position: relative;
-  }
-
-  /* Show the hamburger icon */
+@media screen and (max-width: 768px) {
   .nav-btn {
-    display: block;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
+    display: block; /* or inline-block */
   }
+}
 
-  /* The dropdown menu */
+@media (max-width: 768px) {
   .nav-list {
     position: absolute;
     top: 90px;
@@ -254,9 +244,16 @@ h5 {
     z-index: 1000;
   }
 
-  /* Open state (toggle this with JS) */
   .nav-list.nav-open {
     max-height: 500px; /* enough for all items */
+  }
+
+  .nav-btn {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
   }
 }
 
