@@ -195,7 +195,7 @@ h5 {
   font-size: clamp(1.125rem, 1.011rem + 0.57vw, 1.375rem);
   color: var(--main-text-color);
 }
-
+#nav { pointer-events: auto; } 
 .nav-list {
   display: flex;
   column-gap: 46px;
@@ -220,12 +220,6 @@ h5 {
 }
 
 
-
-@media screen and (max-width: 768px) {
-  .nav-btn {
-    display: block; /* or inline-block */
-  }
-}
 
 
 
@@ -890,7 +884,7 @@ h5 {
 
 @media (max-width: 768px) {
   .nav-list {
-    position: absolute;
+    position: relative;
     top: 90px;
     right: 0;
     width: 100%;
@@ -905,7 +899,7 @@ h5 {
     z-index: 1000;
   }
 
-  .nav-list.nav-open {
+  .nav-list .nav-open {
     max-height: 500px; /* enough for all items */
   }
 
