@@ -198,10 +198,6 @@ h5 {
 
 
 
-#nav {
-  pointer-events: auto;
-}
-
 .nav-list {
   display: flex;
   column-gap: 46px;
