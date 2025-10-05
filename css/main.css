@@ -195,7 +195,12 @@ h5 {
   font-size: clamp(1.125rem, 1.011rem + 0.57vw, 1.375rem);
   color: var(--main-text-color);
 }
-#nav { pointer-events: auto; } 
+
+
+
+/* Desktop */
+#nav { pointer-events: auto; }  /* ensure links are clickable */
+
 .nav-list {
   display: flex;
   column-gap: 46px;
@@ -204,13 +209,9 @@ h5 {
   letter-spacing: -0.15px;
 }
 
-.nav-btn {
-  display: none;
-}
+.nav-btn { display: none; } /* hidden on desktop */
 
-.nav-link {
-  color: var(--main-text-color);
-}
+.nav-link { color: var(--main-text-color); }
 
 .nav-link.active {
   text-decoration: underline;
@@ -218,6 +219,57 @@ h5 {
   text-decoration-thickness: 1.2px;
   text-underline-offset: 7px;
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav { position: relative; } /* anchor the dropdown */
+
+  .nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px; height: 44px;
+    background: var(--card-bg, #fff);
+    border: 1px solid var(--card-border, #e5eef3);
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  .nav-btn img {
+    width: 24px; height: 24px;
+    pointer-events: none;   /* click the button, not the image */
+    user-select: none;
+  }
+
+  .nav-list {
+    position: absolute;     /* dropdown */
+    top: 90px; left: 0; right: 0;
+    width: 100%;
+    background-color: var(--white-color);
+    flex-direction: column;
+    gap: 20px;
+
+    /* closed state */
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    z-index: 1000;
+    border-top: 1px solid var(--card-border, #e5eef3);
+    box-shadow: 0 10px 28px rgba(10,20,30,.06);
+  }
+
+  /* OPEN state — matches JS toggling `#nav` class 'open' */
+  #nav.open .nav-list {
+    max-height: 500px;      /* enough for all items */
+    padding: 20px 0;
+  }
+}
+
+
+
+
 
 
 
@@ -878,36 +930,3 @@ h5 {
           brightness(97%) contrast(103%);
 }
 
-
-
-
-
-@media (max-width: 768px) {
-  .nav-list {
-    position: relative;
-    top: 90px;
-    right: 0;
-    width: 100%;
-    background-color: var(--white-color);
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px 0;
-
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-    z-index: 1000;
-  }
-
-  .nav-list .nav-open {
-    max-height: 500px; /* enough for all items */
-  }
-
-  .nav-btn {
-    display: block;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
-  }
-}
