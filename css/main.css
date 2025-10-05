@@ -198,6 +198,12 @@ h5 {
 
 
 
+#nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* puts items to the right */
+  pointer-events: auto;
+}
 .nav-list {
   display: flex;
   column-gap: 46px;
