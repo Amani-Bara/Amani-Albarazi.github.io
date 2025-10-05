@@ -198,12 +198,7 @@ h5 {
 
 
 
-#nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* puts items to the right */
-  pointer-events: auto;
-}
+/* === NAVBAR === */
 .nav-list {
   display: flex;
   column-gap: 46px;
@@ -227,54 +222,43 @@ h5 {
   text-underline-offset: 7px;
 }
 
+/* --- MOBILE STYLES --- */
 @media (max-width: 768px) {
+  /* Make sure nav stays positioned inside header */
   .nav {
     position: relative;
   }
 
+  /* Show the hamburger icon */
+  .nav-btn {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  /* The dropdown menu */
   .nav-list {
     position: absolute;
     top: 90px;
-    left: 0;
     right: 0;
     width: 100%;
     background-color: var(--white-color);
     flex-direction: column;
     gap: 20px;
-    padding: 0;
+    padding: 20px 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    transition: max-height 0.3s ease-in-out;
     z-index: 1000;
   }
 
-  /* open state (optional if you have JS toggle) */
-  #nav.open .nav-list {
-    max-height: 500px;
-    padding: 20px 0;
-  }
-
-  .nav-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: var(--card-bg, #fff);
-    border: 1px solid var(--card-border, #e5eef3);
-    border-radius: 10px;
-    cursor: pointer;
-    z-index: 1001;
-  }
-
-  .nav-btn img {
-    width: 24px;
-    height: 24px;
-    pointer-events: none;
+  /* Open state (toggle this with JS) */
+  .nav-list.nav-open {
+    max-height: 500px; /* enough for all items */
   }
 }
-
-
 
 
 
