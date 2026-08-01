@@ -244,7 +244,7 @@ h5 {
     z-index: 1000;
   }
 
-  .nav-list.nav-open {
+  #nav.open .nav-list {
     max-height: 500px; /* enough for all items */
   }
 
