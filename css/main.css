@@ -554,6 +554,8 @@ h5 {
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   position: relative;
   overflow: hidden;
+  display: flex;              /* ADD THIS */
+  flex-direction: column; 
 }
 
 @media (max-width: 1100px){ .project-card{ grid-column: span 8; } }
@@ -599,6 +601,7 @@ h5 {
   border: 2px solid var(--primary-accent);
   padding: 10px 14px; border-radius: 12px;
   transition: transform .15s ease, background .2s ease, border-color .2s ease;
+  align-self: flex-start;
 }
 .project-card__cta:hover{
   transform: translateY(-2px);
